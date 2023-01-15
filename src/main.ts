@@ -2,6 +2,9 @@ import "./style.css";
 import * as PIXI from "pixi.js";
 import { Assets, Sprite, TilingSprite } from "pixi.js";
 
+// Scale mode for all textures, will retain pixelation
+PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
+
 // See https://pixijs.io/guides/basics/assets.html
 await Assets.init({ manifest: "/asset-manifest.json" });
 
