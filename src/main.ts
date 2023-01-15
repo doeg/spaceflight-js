@@ -14,7 +14,7 @@ const SCREEN_WIDTH = 160;
 const SCREEN_HEIGHT = 144;
 
 // Used to scale the screen and sprites
-const SCALING_FACTOR = 3;
+const SCALING_FACTOR = 4;
 
 const app = new PIXI.Application();
 
@@ -38,8 +38,7 @@ const ship = new Sprite(gameAssets.playerShip);
 ship.anchor.x = 0.5;
 ship.anchor.y = 0.5;
 
-ship.width = ship.width * SCALING_FACTOR;
-ship.height = ship.height * SCALING_FACTOR;
+ship.scale.set(SCALING_FACTOR, SCALING_FACTOR);
 
 ship.x = app.renderer.view.width / 2;
 ship.y = app.renderer.view.height - ship.height;
