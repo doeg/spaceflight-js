@@ -3,8 +3,16 @@
     "name": "game-screen",
     "assets": [
       {
-        "name": "playerShip",
-        "srcs": "sprites/ship.png"
+        "name": "ship1",
+        "srcs": "sprites/ship1.png"
+      },
+      {
+        "name": "ship2",
+        "srcs": "sprites/ship2.png"
+      },
+      {
+        "name": "ship3",
+        "srcs": "sprites/ship3.png"
       },
       {
         "name": "background",

@@ -36,17 +36,43 @@ const bgTilingSprite = new TilingSprite(
 app.stage.addChild(bgTilingSprite);
 
 // Initialize ship
-const ship = new Sprite(gameAssets.playerShip);
+const ship1 = new Sprite(gameAssets.ship1);
 
-ship.anchor.x = 0.5;
-ship.anchor.y = 0.5;
+ship1.anchor.x = 0.5;
+ship1.anchor.y = 0.5;
 
-ship.scale.set(SCALING_FACTOR, SCALING_FACTOR);
+ship1.scale.set(SCALING_FACTOR, SCALING_FACTOR);
 
-ship.x = app.renderer.view.width / 2;
-ship.y = app.renderer.view.height - ship.height;
+ship1.x = app.renderer.view.width / 2;
+ship1.y = app.renderer.view.height - ship1.height;
 
-app.stage.addChild(ship);
+app.stage.addChild(ship1);
+
+// Initialize ship
+const ship2 = new Sprite(gameAssets.ship2);
+
+ship2.anchor.x = 0.5;
+ship2.anchor.y = 0.5;
+
+ship2.scale.set(SCALING_FACTOR, SCALING_FACTOR);
+
+ship2.x = app.renderer.view.width * 0.25;
+ship2.y = app.renderer.view.height - ship2.height;
+
+app.stage.addChild(ship2);
+
+// Initialize ship
+const ship3 = new Sprite(gameAssets.ship3);
+
+ship3.anchor.x = 0.5;
+ship3.anchor.y = 0.5;
+
+ship3.scale.set(SCALING_FACTOR, SCALING_FACTOR);
+
+ship3.x = app.renderer.view.width * 0.75;
+ship3.y = app.renderer.view.height - ship3.height;
+
+app.stage.addChild(ship3);
 
 app.ticker.add(() => {
   bgTilingSprite.tilePosition.y += 5;
