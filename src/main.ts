@@ -2,6 +2,11 @@ import "./style.css";
 import * as PIXI from "pixi.js";
 import { Assets, Sprite, TilingSprite } from "pixi.js";
 
+// See https://pixijs.io/guides/basics/assets.html
+await Assets.init({ manifest: "/asset-manifest.json" });
+
+const gameAssets = await Assets.loadBundle("game-screen");
+
 // This matches the screen resolution of the original Game Boy
 // and Game Boy colour. The Game Boy Advanced, on the other hand,
 // had a screen resolution of 240x160 px.
@@ -19,15 +24,16 @@ app.renderer.view.height = SCREEN_HEIGHT * SCALING_FACTOR;
 document.getElementById("app")?.appendChild(app.view as any);
 
 // Initialize background
-const bgTexture = await Assets.load("/bg_space.png");
-
-const bgTilingSprite = new TilingSprite(bgTexture, app.renderer.width, app.renderer.height);
+const bgTilingSprite = new TilingSprite(
+  gameAssets.background,
+  app.renderer.width,
+  app.renderer.height
+);
 
 app.stage.addChild(bgTilingSprite);
 
 // Initialize ship
-const shipTexture = await Assets.load("/sprites/ship.png");
-const ship = new Sprite(shipTexture);
+const ship = new Sprite(gameAssets.playerShip);
 
 ship.anchor.x = 0.5;
 ship.anchor.y = 0.5;

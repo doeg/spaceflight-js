@@ -1,0 +1,15 @@
+{
+  "bundles": [{
+    "name": "game-screen",
+    "assets": [
+      {
+        "name": "playerShip",
+        "srcs": "sprites/ship.png"
+      },
+      {
+        "name": "background",
+        "srcs": "bg_space.png"
+      }
+    ]
+  }]
+}
