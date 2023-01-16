@@ -9,6 +9,11 @@ interface NewShipParams {
 export class Ship {
   sprite: Sprite;
 
+  horizontalVelocity: number = 3;
+
+  vx: number = 0;
+  vy: number = 0;
+
   constructor(params: NewShipParams) {
     this.sprite = new Sprite(params.texture);
 
@@ -20,4 +25,8 @@ export class Ship {
     this.sprite.x = params.initialPosition.x;
     this.sprite.y = params.initialPosition.y - this.sprite.height;
   }
+
+  loop = () => {
+    this.sprite.x += this.vx * this.horizontalVelocity;
+  };
 }

@@ -2,6 +2,7 @@ import "./style.css";
 import * as PIXI from "pixi.js";
 import { Assets, TilingSprite } from "pixi.js";
 import { Ship } from "./Ship";
+import { PlayerController } from "./controllers/PlayerController";
 
 // Scale mode for all textures, will retain pixelation
 PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
@@ -47,6 +48,11 @@ const ship1 = new Ship({
 });
 
 app.stage.addChild(ship1.sprite);
+app.ticker.add(() => ship1.loop());
+
+const playerController = new PlayerController({
+  ship: ship1,
+});
 
 // Initialize NPC ships
 const ship2 = new Ship({
